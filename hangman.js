@@ -3,12 +3,14 @@ window.onload = function () {
     let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
     // 2d array of words in lowercase
+
     let categories = [
         ["nissan", "honda", "ford", "mazda", "lexus"], //Cars
         ["apple", "orange", "banana", "grape", "watermellon"], //Fruit
         ["hippo", "monkey", "tiger", "giraffe", "cheetah"], //Animals
         ["idaho", "texas", "tennessee", "georgia", "florida"]  //States
     ];
+    
     let selectedCategory;
     let selectedWord;
     let guess;    
