@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Hangman Game</title>
+</head>
+<body>
+    <section>
+        <h1 style="width: 100%; text-align: center; background-color: black; color: white; padding: 10px 10px; margin-bottom: 20px;">Hangman Game</h1>
+        <div style="width: 50%; padding: 0; margin: 0; float: left; text-align: center;">
+            <h3 style="text-align: center;">The Gallows</h3>
+            <svg id="" width="300" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <!-- Horizontal piece of wood -->
+                <polygon class="cls-2 game-2" points="76.8 76.8 76.8 416 153.6 416 153.6 76.8"/>
+                <g class="cls-3 game-2"><rect x="-28.8" y="233.6" width="339.2" height="25.6" transform="translate(387.2 105.6) rotate(90)"/></g>
+
+                <!-- Base -->
+                <path class="cls-4 game-1" d="M199.68,444.16l-51.2-38.4a12.81,12.81,0,0,0-7.68-2.56H89.6a12.81,12.81,0,0,0-7.68,2.56l-51.2,38.4A12.82,12.82,0,0,0,25.6,454.4v44.8A12.8,12.8,0,0,0,38.4,512H192a12.8,12.8,0,0,0,12.8-12.8V454.4A12.82,12.82,0,0,0,199.68,444.16Z"/> 
+                <g class="cls-3 game-1"><path d="M153.6,409.6V512H192a12.8,12.8,0,0,0,12.8-12.8V448Z"/></g>
+                <g class="cls-5 game-1"><path class="cls-6" d="M76.8,448V409.6L25.6,448v51.2A12.8,12.8,0,0,0,38.4,512H76.8Z"/></g>
+
+                <!-- Top piece of wood -->
+                <polygon class="cls-2 game-3" points="32 0 32 76.8 486.4 76.8 486.4 0"/>
+                <g class="cls-3 game-3"><rect x="32" y="51.2" width="454.4" height="25.6"/></g>
+
+                <!-- Angle support piece -->
+                <polygon class="cls-7 game-4" points="195.29 76.8 153.6 118.49 153.6 227.1 303.91 76.8 195.29 76.8"/>
+
+                <!-- Rope of hangman game -->
+                <path class="cls-1 game-5" d="M443.76,230.18a12.78,12.78,0,0,0-2.16-25.38,12.8,12.8,0,0,0,0-25.6h-6.4V76.8H409.6V179.2h-6.4a12.8,12.8,0,1,0,0,25.6A12.78,12.78,0,0,0,401,230.18C385.9,243,364.8,266.94,364.8,300.8a57.6,57.6,0,0,0,115.2,0C480,266.94,458.9,243,443.76,230.18ZM422.4,332.8a32,32,0,0,1-32-32c0-27.32,21.14-46.76,32-55,10.91,8.15,32,27.44,32,55A32,32,0,0,1,422.4,332.8Z"/>
+                
+                <!-- Floor -->
+                <polygon class="cls-2" points="0 500 0 512 512 512 512 500"/>
+            </svg>
+        </div>
+        <div style="width: 50%; padding: 0; margin: 0; float: left; text-align: center;">
+            <form  action="" method="GET">
+                <button>Start Game</button>
+                <button>Play Again</button>
+                <h3>Guess a letter</h3>
+                <div id="btn1" class="btn-row"></div>
+                <div id="btn2" class="btn-row"></div>
+                <div id="lives"><h4 id="text-container"></h4></div>
+                <div id="caegory"><h4 id="category-container"></h4></div>
+                <div id="word"></div>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript" src="hangman.js"></script>
+</body>
+</html>

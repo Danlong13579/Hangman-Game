@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.cls-1 {
+    fill:#525559;
+}
+.cls-2{ 
+    fill:#ffb85a;
+}
+.cls-3 {
+    opacity:0.08;
+}
+.cls-4 {
+    fill:#757889;
+}
+.cls-5 {
+    opacity:0.2;
+}
+.cls-6 {
+    fill:#fff;
+}
+.cls-7 {
+    fill:#d3934f;
+}
+.game-1, .game-2, .game-3, .game-4, .game-5{
+    display: none;
+}
+
+
+/* button styles */
+.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.btn-row {
+    margin-left: 25%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.btn-letters {
+    width: 100%;
+    margin: 2px;
+    font-size: 24px;
+    background-color: #555555;
+    border-style:solid;
+    border-radius: 3px;
+    border-color: #555555;
+    color: white;
+}
+.btn-letters:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+.btn-letter-correct{
+    width: 100%;
+    margin: 2px;
+    font-size: 24px;
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    border-radius: 3px;
+}
+.btn-letter-incorrect{
+    width: 100%;
+    margin: 2px;
+    font-size: 24px;
+    background-color: white;
+    color: #f44336;
+    border: 2px solid #f44336;
+    border-radius: 3px;
+}
