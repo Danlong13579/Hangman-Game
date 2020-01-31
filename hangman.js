@@ -2,12 +2,12 @@ window.onload = function () {
 
     let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-    // 2d array of words in lowercase
+    // 2d array of words in lowercase by accadent will fix with toUpperCase later
 
     let categories = [
-        ["nissan", "honda", "ford", "mazda", "lexus"], //Cars
+        ["nissan", "honda", "ford", "mazda", "lexus"],         //Cars
         ["apple", "orange", "banana", "grape", "watermellon"], //Fruit
-        ["hippo", "monkey", "tiger", "giraffe", "cheetah"], //Animals
+        ["hippo", "monkey", "tiger", "giraffe", "cheetah"],    //Animals
         ["idaho", "texas", "tennessee", "georgia", "florida"]  //States
     ];
     
@@ -19,13 +19,15 @@ window.onload = function () {
     let buildCount = 0;   //count for building svg image
     let lives = 5;        //number off guess before loss
 
-    let livesContainer = document.getElementById('text-container');
-    let categoryContainer = document.getElementById('category-container');
-    let wordContainer = document.getElementById('word');
+    let livesContainer = document.getElementById('text-container');        //container for win, lose, guess left text
+    let categoryContainer = document.getElementById('category-container'); //hint container for category text
+    let wordContainer = document.getElementById('word');                   //word container for displayed "_" and correct guesses
 
 
-    // make buttons for game
+    // make buttons for game look into refactoring in to one double for loop
     let ButtonSetup = function () {
+
+        //parent objects for the buttons
         gameButtons1 = document.getElementById('btn1')
         gameButtons2 = document.getElementById('btn2');
         
@@ -38,7 +40,10 @@ window.onload = function () {
             //add on click function 
             CheckGuess();
 
+            //adding the newly created button to the parent element
             gameButtons1.appendChild(btn);
+
+            //set type to button so the page doesnt reload on click
             btn.setAttribute("type", "button");
         }
         // last 13 buttons
@@ -50,7 +55,10 @@ window.onload = function () {
             //add on click function
             CheckGuess()
 
+            //adding the newly created button to the parent element
             gameButtons2.appendChild(btn);
+
+            //set type to button so the page doesnt reload on click
             btn.setAttribute("type", "button");
         }
     }
