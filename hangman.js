@@ -11,13 +11,13 @@ window.onload = function () {
         ["idaho", "texas", "tennessee", "georgia", "florida"]  //States
     ];
     
-    let selectedCategory;
-    let selectedWord;
-    let guess; 
-    let guessCount;   
-    let build;
-    let buildCount = 0;
-    let lives = 5;
+    let selectedCategory; //random selected array of words from categories
+    let selectedWord;     //random selected word from the selected array
+    let guess;            //current guess from buttons inner html
+    let guessCount;       //guess count to compare to length off word
+    let build;            //query array of classes given to an svg image
+    let buildCount = 0;   //count for building svg image
+    let lives = 5;        //number off guess before loss
 
     let livesContainer = document.getElementById('text-container');
     let categoryContainer = document.getElementById('category-container');
