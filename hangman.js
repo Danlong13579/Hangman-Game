@@ -13,11 +13,11 @@ window.onload = function () {
     
     let selectedCategory;
     let selectedWord;
-    let guess;    
+    let guess; 
+    let guessCount;   
     let build;
     let buildCount = 0;
     let lives = 5;
-    let guessCount;
 
     let livesContainer = document.getElementById('text-container');
     let categoryContainer = document.getElementById('category-container');
