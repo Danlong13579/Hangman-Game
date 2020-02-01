@@ -15,7 +15,9 @@ window.onload = function () {
     let selectedWord;     //random selected word from the selected array
     let guess;            //current guess from buttons inner html
     let guessCount;       //guess count to compare to length off word
-    let guessSpot;
+    let guessSpot;        //created li elements that contain "_" unguessed spots 
+    let guessSpotCount    //counter for remaining "_" spots in the guessed word
+    let guessSpots        //list of li buttons
     let build;            //query array of classes given to an svg image
     let buildCount = 0;   //count for building svg image
     let lives = 5;        //number off guess before loss
@@ -67,6 +69,7 @@ window.onload = function () {
     }
 
     let CheckGuess = function () {
+        //here we set the onclick function of each button in the for loop
         btn.onclick = function () {
             guess = this.innerHTML;
             this.onclick = null;
@@ -122,24 +125,25 @@ window.onload = function () {
             DisableButtons();
         }
 
-        //TODO logic for Win Condition
-        let guessSpots = document.querySelectorAll("li");
-        let guessSpotCount = 0;
+        //logic for Win Condition
+        guessSpots = document.querySelectorAll("li");
+        guessSpotCount = 0;
         for(let i = 0; i < guessSpots.length; i++){
             if (guessSpots[i].innerHTML === "_"){
                 guessSpotCount++;
             } 
         }
 
-        if(guessSpotCount == 0){
+        //guessSpotCount > 0 aslong as a "_" still exists in the list
+        if(guessSpotCount === 0){
             livesContainer.innerHTML = "You Win!";
             DisableButtons();
         } 
     }
 
+    //disables button in the list so you can not continue to guess after win or loss
     let DisableButtons = function () {
         btns = document.querySelectorAll('button');
-
         for(let i = 0; i < btns.length; i++){
             btns[i].onclick = null;
         }
@@ -154,12 +158,6 @@ window.onload = function () {
         for(let i = 0; i < build.length; i++){
             build[i].style.display = 'block';
         } 
-    }
-
-    let Reset = function () {
-        livesContainer.innerHTML = lives;
-
-
     }
 
     let PlayGame = function () {
