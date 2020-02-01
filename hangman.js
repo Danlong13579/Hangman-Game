@@ -15,6 +15,7 @@ window.onload = function () {
     let selectedWord;     //random selected word from the selected array
     let guess;            //current guess from buttons inner html
     let guessCount;       //guess count to compare to length off word
+    let guessSpot;
     let build;            //query array of classes given to an svg image
     let buildCount = 0;   //count for building svg image
     let lives = 5;        //number off guess before loss
@@ -106,7 +107,7 @@ window.onload = function () {
     //build word spaces for game
     let WordSetUp = function () {
         for(let i = 0; i < selectedWord.length; i++) {
-            let guessSpot = document.createElement('li');
+            guessSpot = document.createElement('li');
             guessSpot.setAttribute('class','guess-spot');
             guessSpot.innerHTML = "_";
             wordContainer.appendChild(guessSpot);
@@ -120,8 +121,20 @@ window.onload = function () {
             livesContainer.innerHTML = "You Lose, Try again";
             DisableButtons();
         }
-        //TODO logic for Win Condition
 
+        //TODO logic for Win Condition
+        let guessSpots = document.querySelectorAll("li");
+        let guessSpotCount = 0;
+        for(let i = 0; i < guessSpots.length; i++){
+            if (guessSpots[i].innerHTML === "_"){
+                guessSpotCount++;
+            } 
+        }
+
+        if(guessSpotCount == 0){
+            livesContainer.innerHTML = "You Win!";
+            DisableButtons();
+        } 
     }
 
     let DisableButtons = function () {
