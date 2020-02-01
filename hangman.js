@@ -32,7 +32,7 @@ window.onload = function () {
         gameButtons2 = document.getElementById('btn2');
         
         //first 13 buttons
-        for(let i = 0; i < alphabet.length / 2; i++) {
+        for(let i = 0; i < alphabet.length; i++) {
             btn = document.createElement('button');
             btn.className = 'btn-letters';
             btn.innerHTML = alphabet[i];
@@ -40,23 +40,12 @@ window.onload = function () {
             //add on click function 
             CheckGuess();
 
-            //adding the newly created button to the parent element
-            gameButtons1.appendChild(btn);
-
-            //set type to button so the page doesnt reload on click
-            btn.setAttribute("type", "button");
-        }
-        // last 13 buttons
-        for(let i = 13; i < alphabet.length; i++) {
-            btn = document.createElement('button');
-            btn.className = 'btn-letters';
-            btn.innerHTML = alphabet[i];
-
-            //add on click function
-            CheckGuess()
-
-            //adding the newly created button to the parent element
-            gameButtons2.appendChild(btn);
+            //adding the newly created button to there parent elements
+            if (i < alphabet.length / 2) {
+                gameButtons1.appendChild(btn);
+            } else {
+                gameButtons2.appendChild(btn);
+            }
 
             //set type to button so the page doesnt reload on click
             btn.setAttribute("type", "button");
@@ -84,10 +73,10 @@ window.onload = function () {
             for(let i = 0; i < selectedWord.length; i++){
                 if (selectedWord[i] === guess){
 
-                    //replace _ with letters
+                    //replace "_" with letters
                     document.getElementsByClassName('guess-spot')[i].innerHTML = guess;
 
-                    //green correct button
+                    //green correct button style
                     this.setAttribute('class', 'btn-letter-correct');
                     SetText();
                 
